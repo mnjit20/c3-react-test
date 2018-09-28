@@ -1,5 +1,5 @@
 import React from "react";
-import { PearsonUsers } from "./PearsonUsers";
+import PearsonUsers from "./components/PearsonUsers/PearsonUsers";
 
 export const App = () => (
   <main>
@@ -15,7 +15,7 @@ export const App = () => (
     <h2> Stack: </h2>
     <ul>
       <li>
-        <a 
+        <a
           target="_blank"
           rel="noopener noreferrer"
           href="https://reactjs.org/docs/hello-world.html">
@@ -32,10 +32,10 @@ export const App = () => (
         </a>
       </li>
       <li>
-        <a 
-        target="_blank"
-        rel="noopener noreferrer"
-        href="http://airbnb.io/enzyme/docs/api/">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="http://airbnb.io/enzyme/docs/api/">
           Enzyme(v3.3.0)
         </a>
       </li>
