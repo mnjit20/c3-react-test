@@ -52,17 +52,15 @@ class PearsonUsers extends Component {
   getPearsonListRender() {
     const { classes } = this.props;
     return (
-
-      <Grid container spacing={24} >
-        {
-          this.state.users.map((user) => {
-            return (<PearsonUser key={user.id} class={classes.paper} userData={user} />);
-          })
-        }
-      </Grid >
-
-
-
+      <div className="box1">
+        <ul>
+          {
+            this.state.users.map((user) => {
+              return (<PearsonUser key={user.id} class={classes.paper} user={user} />);
+            })
+          }
+        </ul>
+      </div>
     );
 
 
