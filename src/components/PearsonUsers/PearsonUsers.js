@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import http_api from '../../lib/http_api';
+import { USERS_API_URL } from '../../config';
 
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -53,6 +54,61 @@ class PearsonUsers extends Component {
 
   componentDidMount() {
     console.log('component mounted');
+
+    http_api.get(USERS_API_URL, {
+      params: {
+        page: 1,
+        per_page: 10
+      }
+    }).then((res) => {
+      const allUsers = [...this.state.users, ...res.data];
+      console.log('now all with duplicate', allUsers);
+
+      //removing duplicate users from the array
+      let uniq = this.getUniqueArray(allUsers);
+      console.log('Uniques ', uniq);
+      console.log('sorting', uniq.sort(this.compare));
+      this.setState({ users: uniq, dataLoaded: true });
+
+    }).catch((e) => {
+      console.log('Error', e);
+    })
+
+  }
+
+  compare(a, b) {
+    // Use toUpperCase() to ignore character casing
+    const genreA = a.first_name.toUpperCase();
+    const genreB = b.first_name.toUpperCase();
+
+    let comparison = 0;
+    if (genreA > genreB) {
+      comparison = 1;
+    } else if (genreA < genreB) {
+      comparison = -1;
+    }
+    console.log('comparision', comparison);
+    return comparison;
+  }
+
+
+  getUniqueArray(arr) {
+    return Array.from(new Set(arr.map(JSON.stringify))).map(JSON.parse);
+  }
+
+  removeUser(id) {
+    console.log('id is', id);
+
+    const users = [...this.state.users];
+
+    const index = users.findIndex(user => user.id === id);
+    console.log("deletion index is: ", index);
+
+    const updatedArray = users.splice(index, 1);
+    console.log(users);
+
+    this.setState({ users });
+
   }
 
   getPearsonListRender() {
@@ -61,8 +117,11 @@ class PearsonUsers extends Component {
       <div className="box1"><ul>
         {
           this.state.users.map((user) => {
-            return (<PearsonUser key={user.id} class={classes.paper} user={user} />);
+            return (<PearsonUser key={user.id} class={classes.paper} user={user} removeUser={() => this.removeUser(user.id)} />);
           })
+        }{
+          console.log('check--', this.state.users) &&
+          this.state.users.length === 0 && <p> No user found</p>
         }
       </ul></div>
     );
@@ -85,6 +144,7 @@ class PearsonUsers extends Component {
           }{
             this.getPearsonListRender()
           }
+
 
         </div>
       </div>

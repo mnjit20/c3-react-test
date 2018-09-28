@@ -10,7 +10,7 @@ export default (props) => {
             <li> <div>
                 <img src={props.user.avatar} alt={props.user.first_name + ' ' + props.user.last_name + ' image'} />
                 <h3>{props.user.first_name + ' ' + props.user.last_name}</h3>
-                <a>Delete</a>
+                <a onClick={props.removeUser}>Delete</a>
             </div>
             </li>
         </Fragment>
