@@ -13,7 +13,6 @@ export default (props) => {
                 <a>Delete</a>
             </div>
             </li>
-
         </Fragment>
 
     )

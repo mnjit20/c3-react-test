@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from 'prop-types';
+import http_api from '../../lib/http_api';
+
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -49,32 +51,21 @@ class PearsonUsers extends Component {
     // getPearsonListRender = this.getPearsonListRender.bind(this);
   }
 
+  componentDidMount() {
+    console.log('component mounted');
+  }
+
   getPearsonListRender() {
     const { classes } = this.props;
     return (
-      <div className="box1">
-        <ul>
-          {
-            this.state.users.map((user) => {
-              return (<PearsonUser key={user.id} class={classes.paper} user={user} />);
-            })
-          }
-        </ul>
-      </div>
-    );
-
-
-
-    /*return (
-      // <PearsonUser class={classes.paper} />
-      <Grid container spacing={24}>
+      <div className="box1"><ul>
         {
           this.state.users.map((user) => {
-            <PearsonUser class={classes.paper} userData={user} />
+            return (<PearsonUser key={user.id} class={classes.paper} user={user} />);
           })
         }
-      </Grid>
-    );*/
+      </ul></div>
+    );
 
   }
 
