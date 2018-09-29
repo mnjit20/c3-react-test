@@ -1,9 +1,7 @@
 import React, { Fragment } from 'react'
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
+import PropTypes from 'prop-types';
 import LazyLoad from 'react-lazyload';
-export default (props) => {
-
+const PearsonUser = (props) => {
     return (
         <Fragment>
             <li> <div>
@@ -15,6 +13,15 @@ export default (props) => {
             </div>
             </li>
         </Fragment >
-
     )
 }
+
+// defined proptypes for the component
+PearsonUser.propTypes = {
+    user: PropTypes.object.isRequired,
+    removeUser: PropTypes.func.isRequired,
+};
+
+
+export default PearsonUser;
+

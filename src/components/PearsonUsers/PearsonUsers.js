@@ -1,27 +1,9 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import http_api from '../../lib/http_api';
 import { USERS_API_URL } from '../../config';
 import Loader from '../Loader/Loader';
-import SortButton from '../../assets/img/sort3.png';
-
-
-import { withStyles } from '@material-ui/core/styles';
-//import Paper from '@material-ui/core/Paper';
-//import Grid from '@material-ui/core/Grid';
 import PearsonUser from '../PearsonUser/PearsonUser';
-
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing.unit * 2,
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-});
-
+import SortableButton from '../Utility/SortableButton';
 
 class PearsonUsers extends Component {
   constructor(props) {
@@ -55,13 +37,12 @@ class PearsonUsers extends Component {
       sort: false
     };
 
-    // getPearsonListRender = this.getPearsonListRender.bind(this);
     this.compareFunc = this.compareFunc.bind(this);
+    this.handleSortButtonClick = this.handleSortButtonClick.bind(this);
+    this.getPearsonListRender = this.getPearsonListRender.bind(this);
   }
 
   componentDidMount() {
-    console.log('component mounted');
-
     http_api.get(USERS_API_URL, {
       params: {
         page: 1,
@@ -69,26 +50,20 @@ class PearsonUsers extends Component {
       }
     }).then((res) => {
       const allUsers = [...this.state.users, ...res.data];
-      console.log('now all with duplicate', allUsers);
 
-      //removing duplicate users from the array
+      // uniques users
       let uniq = this.getUniqueArray(allUsers);
-      //let uniq = allUsers;
-      console.log('Uniques ', uniq);
-
-      //console.log('sorting', uniq.sort());
       this.setState({ users: uniq, dataLoaded: true });
 
     }).catch((e) => {
-      console.log('Error', e);
+      console.log('*** Error ****', e);
     })
 
   }
 
-  sort() {
+  handleSortButtonClick() {
     let users = this.state.users;
-    console.log("sorting");
-    console.log('sorting', users.sort(this.compareFunc));
+    users.sort(this.compareFunc);
     this.setState({
       users: users,
       sort: !this.state.sort
@@ -140,18 +115,10 @@ class PearsonUsers extends Component {
   * @param {string} id
   */
   removeUser(id) {
-    console.log('id is', id);
-
     const users = [...this.state.users];
-
     const index = users.findIndex(user => user.id === id);
-    console.log("deletion index is: ", index);
-
     users.splice(index, 1);
-    console.log(users);
-
     this.setState({ users });
-
   }
 
 
@@ -160,30 +127,22 @@ class PearsonUsers extends Component {
   * Making call to get the person list render
   */
   getPearsonListRender() {
-    const { classes } = this.props;
+    // const { classes } = this.props;
     return (
       <div>
-        {this.state.users.length > 0 &&
-          <div className="sort">
-            <img onClick={() => this.sort()} src={SortButton}></img><p onClick={() => this.sort()}>Sort : {this.state.sort ? 'Z-A' : 'A-Z'}</p>
-          </div>
-
+        {this.state.users.length > 0 ?
+          <SortableButton sort={() => this.handleSortButtonClick()} sortStatus={this.state.sort} /> :
+          <p className="empty-user-list">User list is empty. Kindly reload the page.</p>
         }
-        <div className="box1">
+        <div className="user-list-box">
           <ul>
             {
               this.state.users.map((user) => {
                 return (
-
                   <PearsonUser key={user.id} user={user} removeUser={() => this.removeUser(user.id)} />
-
                 );
               })
-            }{
-              this.state.users.length === 0 &&
-              <p>User list is empty!</p>
             }
-
           </ul></div>
       </div>
     );
@@ -196,13 +155,13 @@ class PearsonUsers extends Component {
   */
 
   initRender() {
-    let element = '';
+    let componentData = '';
     if (this.state.dataLoaded === false) {
-      element = <Loader />
+      componentData = <Loader />
     } else {
-      element = this.getPearsonListRender();
+      componentData = this.getPearsonListRender();
     }
-    return element;
+    return componentData;
   }
 
 
@@ -214,9 +173,9 @@ class PearsonUsers extends Component {
 
 
   render() {
-    const { classes } = this.props;
+    // const { classes } = this.props;
     return (
-      <div className={classes.root}>
+      <div >
         <div className="pearon-users">
           <h1>Pearson User Management</h1>
           {
@@ -230,9 +189,4 @@ class PearsonUsers extends Component {
 
 
 
-
-PearsonUsers.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(PearsonUsers);
+export default PearsonUsers;
