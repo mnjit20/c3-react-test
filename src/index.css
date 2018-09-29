@@ -1,3 +1,6 @@
+body{
+	font-family: 'Muli', sans-serif;
+}
 .pearon-users {
 		width: 100%;
 }
@@ -131,4 +134,27 @@ img {
 	  -webkit-transform: scale(1.0);
 	  transform: scale(1.0);
 	}
-  }
+	}
+	
+
+	.sort{
+		position: absolute;
+    /* float: right; */
+    right: 0px;
+		padding: 10px;
+/* 		
+		text-align: right;
+    width: auto;
+    display: inline;
+		margin-right: 20px;
+    float: right; */
+	}
+	.sort img {
+		position:fixed;
+		margin-left: 15px
+	}
+	.sort p {
+		margin-top: 30px;
+		font-size: 13px;
+    color: #197fa3;
+	}

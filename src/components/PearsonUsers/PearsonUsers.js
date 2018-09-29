@@ -1,14 +1,16 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import http_api from '../../lib/http_api';
 import { USERS_API_URL } from '../../config';
 import Loader from '../Loader/Loader';
-import LazyLoad from 'react-lazyload';
+import SortButton from '../../assets/img/sort3.png';
+
 
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
+//import Paper from '@material-ui/core/Paper';
+//import Grid from '@material-ui/core/Grid';
 import PearsonUser from '../PearsonUser/PearsonUser';
+
 const styles = theme => ({
   root: {
     flexGrow: 1,
@@ -47,558 +49,14 @@ class PearsonUsers extends Component {
           last_name: "Ramos",
           avatar:
             "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
-        },
-        {
-          id: 5,
-          first_name: "Charles",
-          last_name: "Morris",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
-        },
-        {
-          id: 6,
-          first_name: "Tracey",
-          last_name: "Ramos",
-          avatar:
-            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
         }
       ],
-      dataLoaded: false
+      dataLoaded: false,
+      sort: false
     };
 
     // getPearsonListRender = this.getPearsonListRender.bind(this);
+    this.compareFunc = this.compareFunc.bind(this);
   }
 
   componentDidMount() {
@@ -614,10 +72,11 @@ class PearsonUsers extends Component {
       console.log('now all with duplicate', allUsers);
 
       //removing duplicate users from the array
-      //let uniq = this.getUniqueArray(allUsers);
-      let uniq = allUsers;
+      let uniq = this.getUniqueArray(allUsers);
+      //let uniq = allUsers;
       console.log('Uniques ', uniq);
-      console.log('sorting', uniq.sort(this.compare));
+
+      //console.log('sorting', uniq.sort());
       this.setState({ users: uniq, dataLoaded: true });
 
     }).catch((e) => {
@@ -626,10 +85,35 @@ class PearsonUsers extends Component {
 
   }
 
-  compare(a, b) {
+  sort() {
+    let users = this.state.users;
+    console.log("sorting");
+    console.log('sorting', users.sort(this.compareFunc));
+    this.setState({
+      users: users,
+      sort: !this.state.sort
+    })
+  }
+  /**
+    * compareFunc - function 
+    * Compare function for sorting a array of objects for particular key name
+    * @param {array} arr
+    */
+  compareFunc(a, b) {
     // Use toUpperCase() to ignore character casing
-    const genreA = a.first_name.toUpperCase();
-    const genreB = b.first_name.toUpperCase();
+    let genreA;
+    let genreB;
+    if (this.state.sort) {
+      genreA = a.first_name.toUpperCase();
+      genreB = b.first_name.toUpperCase();
+    } else {
+      genreA = b.first_name.toUpperCase();
+      genreB = a.first_name.toUpperCase();
+    }
+
+    // genreA = a.first_name.toUpperCase();
+    // genreB = b.first_name.toUpperCase();
+
 
     let comparison = 0;
     if (genreA > genreB) {
@@ -637,15 +121,24 @@ class PearsonUsers extends Component {
     } else if (genreA < genreB) {
       comparison = -1;
     }
-    console.log('comparision', comparison);
     return comparison;
   }
 
+  /**
+    * getUniqueArray - function 
+    * Return unique list of array elements, removes all the duplicate entries
+    * @param {array} arr
+    */
 
   getUniqueArray(arr) {
     return Array.from(new Set(arr.map(JSON.stringify))).map(JSON.parse);
   }
 
+  /**
+  * removeUser - function 
+  * To remove individual user from the user list 
+  * @param {string} id
+  */
   removeUser(id) {
     console.log('id is', id);
 
@@ -654,31 +147,53 @@ class PearsonUsers extends Component {
     const index = users.findIndex(user => user.id === id);
     console.log("deletion index is: ", index);
 
-    const updatedArray = users.splice(index, 1);
+    users.splice(index, 1);
     console.log(users);
 
     this.setState({ users });
 
   }
 
+
+  /**
+  * getPearsonListRender function 
+  * Making call to get the person list render
+  */
   getPearsonListRender() {
     const { classes } = this.props;
     return (
-      <div className="box1"><ul>
-        {
-          this.state.users.map((user) => {
-            return (
-              <PearsonUser key={user.id} class={classes.paper} user={user} removeUser={() => this.removeUser(user.id)} />
-            );
-          })
-        }{
-          console.log('check--', this.state.users) &&
-          this.state.users.length === 0 && <p> No user found</p>
-        }
+      <div>
+        {this.state.users.length > 0 &&
+          <div className="sort">
+            <img onClick={() => this.sort()} src={SortButton}></img><p onClick={() => this.sort()}>Sort : {this.state.sort ? 'Z-A' : 'A-Z'}</p>
+          </div>
 
-      </ul></div>
+        }
+        <div className="box1">
+          <ul>
+            {
+              this.state.users.map((user) => {
+                return (
+
+                  <PearsonUser key={user.id} user={user} removeUser={() => this.removeUser(user.id)} />
+
+                );
+              })
+            }{
+              this.state.users.length === 0 &&
+              <p>User list is empty!</p>
+            }
+
+          </ul></div>
+      </div>
     );
   }
+
+
+  /**
+  * initRender function to initialize rendering
+  * Making call to get the person list render
+  */
 
   initRender() {
     let element = '';
@@ -691,23 +206,22 @@ class PearsonUsers extends Component {
   }
 
 
+
+  /**
+  * react render function - render
+  * Rendering view to the dom
+  */
+
+
   render() {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
         <div className="pearon-users">
           <h1>Pearson User Management</h1>
-          {/* <PearsonUser class={classes.paper} /> */}
-          {/* Render users here */}
           {
-            // this.state.users.map((user) => {
-            //   //  console.log(user);
-            // })
-          }{
             this.initRender()
           }
-
-
         </div>
       </div>
     );
