@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from 'prop-types';
 import http_api from '../../lib/http_api';
 import { USERS_API_URL } from '../../config';
+import Loader from '../Loader/Loader';
+import LazyLoad from 'react-lazyload';
 
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -45,8 +47,555 @@ class PearsonUsers extends Component {
           last_name: "Ramos",
           avatar:
             "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
+        },
+        {
+          id: 5,
+          first_name: "Charles",
+          last_name: "Morris",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg"
+        },
+        {
+          id: 6,
+          first_name: "Tracey",
+          last_name: "Ramos",
+          avatar:
+            "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg"
         }
-      ]
+      ],
+      dataLoaded: false
     };
 
     // getPearsonListRender = this.getPearsonListRender.bind(this);
@@ -65,7 +614,8 @@ class PearsonUsers extends Component {
       console.log('now all with duplicate', allUsers);
 
       //removing duplicate users from the array
-      let uniq = this.getUniqueArray(allUsers);
+      //let uniq = this.getUniqueArray(allUsers);
+      let uniq = allUsers;
       console.log('Uniques ', uniq);
       console.log('sorting', uniq.sort(this.compare));
       this.setState({ users: uniq, dataLoaded: true });
@@ -117,15 +667,27 @@ class PearsonUsers extends Component {
       <div className="box1"><ul>
         {
           this.state.users.map((user) => {
-            return (<PearsonUser key={user.id} class={classes.paper} user={user} removeUser={() => this.removeUser(user.id)} />);
+            return (
+              <PearsonUser key={user.id} class={classes.paper} user={user} removeUser={() => this.removeUser(user.id)} />
+            );
           })
         }{
           console.log('check--', this.state.users) &&
           this.state.users.length === 0 && <p> No user found</p>
         }
+
       </ul></div>
     );
+  }
 
+  initRender() {
+    let element = '';
+    if (this.state.dataLoaded === false) {
+      element = <Loader />
+    } else {
+      element = this.getPearsonListRender();
+    }
+    return element;
   }
 
 
@@ -142,7 +704,7 @@ class PearsonUsers extends Component {
             //   //  console.log(user);
             // })
           }{
-            this.getPearsonListRender()
+            this.initRender()
           }
 
 
