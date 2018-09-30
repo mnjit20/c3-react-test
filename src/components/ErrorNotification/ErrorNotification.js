@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types';
 const ErrorNotification = (props) => {
     return (
         <div>
@@ -8,5 +8,8 @@ const ErrorNotification = (props) => {
             </div>
         </div>
     )
+}
+ErrorNotification.propTypes = {
+    message: PropTypes.string.isRequired
 }
 export default ErrorNotification;

@@ -44,6 +44,7 @@ class PearsonUsers extends Component {
     this.getPearsonListRender = this.getPearsonListRender.bind(this);
   }
 
+  //  lifecylcle hooks for loading the data from http api.
   componentDidMount() {
     http_api.get(USERS_API_URL, {
       params: {
@@ -123,7 +124,6 @@ class PearsonUsers extends Component {
   * Making call to get the person list render
   */
   getPearsonListRender() {
-    // const { classes } = this.props;
     return (
       <div>
         {
@@ -178,9 +178,7 @@ class PearsonUsers extends Component {
       <div >
         <div className="pearon-users">
           <h1>Pearson User Management</h1>
-          {
-            this.init()
-          }
+          {this.init()}
         </div>
       </div>
     );

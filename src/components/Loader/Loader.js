@@ -1,5 +1,7 @@
 import React from 'react'
 
+// spinner or loader for showing while components are getting loaded
+
 const Loader = () => {
     return (
         <div className="spinner">
