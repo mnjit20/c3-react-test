@@ -1,6 +1,71 @@
 body{
 	font-family: 'Muli', sans-serif;
 }
+
+/* css for spinner */
+.spinner {
+	margin: 100px auto 0;
+	width: 70px;
+	text-align: center;
+	
+  }
+  
+  .spinner > div {
+	width: 18px;
+	height: 18px;
+	background-color: #007fa3;
+  
+	border-radius: 100%;
+	display: inline-block;
+	-webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+	animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  }
+  
+  .spinner .bounce1 {
+	-webkit-animation-delay: -0.32s;
+	animation-delay: -0.32s;
+  }
+  
+  .spinner .bounce2 {
+	-webkit-animation-delay: -0.16s;
+	animation-delay: -0.16s;
+  }
+  
+  @-webkit-keyframes sk-bouncedelay {
+	0%, 80%, 100% { -webkit-transform: scale(0) }
+	40% { -webkit-transform: scale(1.0) }
+  }
+
+  /* css for spinner ends */
+  
+  @keyframes sk-bouncedelay {
+	0%, 80%, 100% { 
+	  -webkit-transform: scale(0);
+	  transform: scale(0);
+	} 40% { 
+	  -webkit-transform: scale(1.0);
+	  transform: scale(1.0);
+	}
+	}
+	
+
+	.sort{
+		position: absolute;
+    right: 0px;
+		padding: 10px;
+}
+	.sort img {
+		
+		margin-left: 15px
+	}
+	.sort p {
+		margin-top: 5px;
+		font-size: 13px;
+		color: #197fa3;
+    cursor: default;
+		
+	}
+	
 .pearon-users {
 		width: 100%;
 }
@@ -91,76 +156,11 @@ body{
 img {
   background: url('/../loading.gif') no-repeat;
 }
-  
-
-
-
-/* css for spinner */
-.spinner {
-	margin: 100px auto 0;
-	width: 70px;
-	text-align: center;
-	
-  }
-  
-  .spinner > div {
-	width: 18px;
-	height: 18px;
-	background-color: #007fa3;
-  
-	border-radius: 100%;
-	display: inline-block;
-	-webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-	animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-  }
-  
-  .spinner .bounce1 {
-	-webkit-animation-delay: -0.32s;
-	animation-delay: -0.32s;
-  }
-  
-  .spinner .bounce2 {
-	-webkit-animation-delay: -0.16s;
-	animation-delay: -0.16s;
-  }
-  
-  @-webkit-keyframes sk-bouncedelay {
-	0%, 80%, 100% { -webkit-transform: scale(0) }
-	40% { -webkit-transform: scale(1.0) }
-  }
-
-  /* css for spinner ends */
-  
-  @keyframes sk-bouncedelay {
-	0%, 80%, 100% { 
-	  -webkit-transform: scale(0);
-	  transform: scale(0);
-	} 40% { 
-	  -webkit-transform: scale(1.0);
-	  transform: scale(1.0);
-	}
-	}
 	
 
-	.sort{
-		position: absolute;
-    /* float: right; */
-    right: 0px;
-		padding: 10px;
-/* 		
-		text-align: right;
-    width: auto;
-    display: inline;
-		margin-right: 20px;
-    float: right; */
-	}
-	.sort img {
-		
-		margin-left: 15px
-	}
-	.sort p {
-		margin-top: 5px;
-		font-size: 13px;
-		color: #197fa3;
-		
-	}
+.error-msg p{
+	background: #ee5340;
+	padding: 10px;
+	color: white;
+	border-radius: 5px;
+}

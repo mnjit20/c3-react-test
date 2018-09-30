@@ -4,6 +4,7 @@ import { USERS_API_URL } from '../../config';
 import Loader from '../Loader/Loader';
 import PearsonUser from '../PearsonUser/PearsonUser';
 import SortableButton from '../Utility/SortableButton';
+import ErrorNotification from '../ErrorNotification/ErrorNotification';
 
 class PearsonUsers extends Component {
   constructor(props) {
@@ -34,7 +35,8 @@ class PearsonUsers extends Component {
         }
       ],
       dataLoaded: false,
-      sort: false
+      isSorted: false,
+      isError: false
     };
 
     this.compareFunc = this.compareFunc.bind(this);
@@ -56,7 +58,7 @@ class PearsonUsers extends Component {
       this.setState({ users: uniq, dataLoaded: true });
 
     }).catch((e) => {
-      console.log('*** Error ****', e);
+      this.setState({ isError: true });
     })
 
   }
@@ -66,7 +68,7 @@ class PearsonUsers extends Component {
     users.sort(this.compareFunc);
     this.setState({
       users: users,
-      sort: !this.state.sort
+      isSorted: !this.state.isSorted
     })
   }
   /**
@@ -75,21 +77,15 @@ class PearsonUsers extends Component {
     * @param {array} arr
     */
   compareFunc(a, b) {
-    // Use toUpperCase() to ignore character casing
     let genreA;
     let genreB;
-    if (this.state.sort) {
+    if (this.state.isSorted) {
       genreA = a.first_name.toUpperCase();
       genreB = b.first_name.toUpperCase();
     } else {
       genreA = b.first_name.toUpperCase();
       genreB = a.first_name.toUpperCase();
     }
-
-    // genreA = a.first_name.toUpperCase();
-    // genreB = b.first_name.toUpperCase();
-
-
     let comparison = 0;
     if (genreA > genreB) {
       comparison = 1;
@@ -130,8 +126,13 @@ class PearsonUsers extends Component {
     // const { classes } = this.props;
     return (
       <div>
+        {
+          this.state.isError ?
+            <ErrorNotification message={'There\'s some error in loading api data. Kindly check this later'} />
+            : null
+        }
         {this.state.users.length > 0 ?
-          <SortableButton sort={() => this.handleSortButtonClick()} sortStatus={this.state.sort} /> :
+          <SortableButton sort={() => this.handleSortButtonClick()} sortStatus={this.state.isSorted} /> :
           <p className="empty-user-list">User list is empty. Kindly reload the page.</p>
         }
         <div className="user-list-box">
@@ -150,13 +151,13 @@ class PearsonUsers extends Component {
 
 
   /**
-  * initRender function to initialize rendering
+  * init function to initialize rendering
   * Making call to get the person list render
   */
 
-  initRender() {
+  init() {
     let componentData = '';
-    if (this.state.dataLoaded === false) {
+    if (this.state.dataLoaded === false && !this.state.isError) {
       componentData = <Loader />
     } else {
       componentData = this.getPearsonListRender();
@@ -173,13 +174,12 @@ class PearsonUsers extends Component {
 
 
   render() {
-    // const { classes } = this.props;
     return (
       <div >
         <div className="pearon-users">
           <h1>Pearson User Management</h1>
           {
-            this.initRender()
+            this.init()
           }
         </div>
       </div>
